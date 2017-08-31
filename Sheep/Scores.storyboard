@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HY3-QJ-K5J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scores View Controller-->
+        <scene sceneID="UY3-ye-hBu">
+            <objects>
+                <viewController id="HY3-QJ-K5J" customClass="ScoresViewController" customModule="Sheep" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dgc-Do-jHF"/>
+                        <viewControllerLayoutGuide type="bottom" id="EFf-M5-fBp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="upq-6Y-fce">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background1" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-ez-Bg8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-86-Moy">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r6-Rz-PrG">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="25"/>
+                                        <state key="normal" title="חזרה למסך הראשי">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToMainMenu:" destination="HY3-QJ-K5J" eventType="touchUpInside" id="Rzo-n7-pNO"/>
+                                            <segue destination="y2B-oD-Tq3" kind="presentation" identifier="start" id="Qbg-Px-Xey"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-hA-WDK">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="567"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="Np4-VQ-gLC">
+                                                <rect key="frame" x="0.0" y="55.5" width="343" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Np4-VQ-gLC" id="VS4-be-38Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="HY3-QJ-K5J" id="LR5-mr-8sI"/>
+                                            <outlet property="delegate" destination="HY3-QJ-K5J" id="uT5-Ly-KeL"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1cb-ez-Bg8" firstAttribute="bottom" secondItem="EFf-M5-fBp" secondAttribute="top" id="B2W-ad-g6r"/>
+                            <constraint firstItem="1cb-ez-Bg8" firstAttribute="top" secondItem="dgc-Do-jHF" secondAttribute="bottom" id="BEs-ot-Qsn"/>
+                            <constraint firstItem="BVo-86-Moy" firstAttribute="top" secondItem="1cb-ez-Bg8" secondAttribute="top" id="G5n-CO-KeB"/>
+                            <constraint firstAttribute="bottom" secondItem="BVo-86-Moy" secondAttribute="bottom" constant="20" symbolic="YES" id="X0x-dJ-i7P"/>
+                            <constraint firstAttribute="trailing" secondItem="1cb-ez-Bg8" secondAttribute="trailing" id="c88-gG-SIY"/>
+                            <constraint firstItem="BVo-86-Moy" firstAttribute="centerX" secondItem="1cb-ez-Bg8" secondAttribute="centerX" id="dkr-5M-4ug"/>
+                            <constraint firstItem="1cb-ez-Bg8" firstAttribute="leading" secondItem="upq-6Y-fce" secondAttribute="leading" id="nX8-ug-sBz"/>
+                            <constraint firstItem="BVo-86-Moy" firstAttribute="leading" secondItem="upq-6Y-fce" secondAttribute="leadingMargin" id="p9P-ho-FpU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Phh-hA-WDK" id="5Xh-fq-F2j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwI-4P-DrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="139.880059970015"/>
+        </scene>
+        <!--Start-->
+        <scene sceneID="VJj-D1-rRb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Start" id="y2B-oD-Tq3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l64-pb-Ph8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766" y="-133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background1" width="313" height="414"/>
+    </resources>
+</document>

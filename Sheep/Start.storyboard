@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FeZ-GX-fDH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="EQ7-a8-NnL">
+            <objects>
+                <viewController id="FeZ-GX-fDH" customClass="StartViewController" customModule="Sheep" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OCB-74-fE8"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Qk-x0-H2f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZsI-iu-EWz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-K2-C3o">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Pab-Tt-PIG" appends="YES" id="tcg-Re-abV"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7nW-eO-X9Q">
+                                <rect key="frame" x="16" y="233" width="344" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WL-dS-gpv">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="66.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <state key="normal" title="משחק חדש">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="newGameAction:" destination="FeZ-GX-fDH" eventType="touchUpInside" id="hdp-90-jg1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUr-qk-afE" userLabel="משחק משותף">
+                                        <rect key="frame" x="0.0" y="66.5" width="344" height="67"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <state key="normal" title="משחק משותף">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="HUl-Ba-C72" kind="presentation" id="LH9-xG-sOw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeM-8q-rhP">
+                                        <rect key="frame" x="0.0" y="133.5" width="344" height="66.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <state key="normal" title="לוח תוצאות">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="EaY-Ia-2KZ" kind="presentation" identifier="scores" id="scp-uA-9hc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yz3-N7-BXq">
+                                <rect key="frame" x="16" y="288" width="343" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-Bx-8BF">
+                                        <rect key="frame" x="0.0" y="31.5" width="171.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <state key="normal" title="מתקדמים">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Oik-r5-mZN" kind="presentation" identifier="advanced" id="zvY-QN-i3Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jx-o8-Ccd">
+                                        <rect key="frame" x="171.5" y="31.5" width="171.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                        <state key="normal" title="מתחילים">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Oik-r5-mZN" kind="presentation" identifier="beginners" id="BkU-bN-cFH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yz3-N7-BXq" firstAttribute="leading" secondItem="ZsI-iu-EWz" secondAttribute="leadingMargin" id="4Zi-Cm-xOM"/>
+                            <constraint firstItem="7nW-eO-X9Q" firstAttribute="centerX" secondItem="hXr-K2-C3o" secondAttribute="centerX" id="DLl-Sc-N39"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yz3-N7-BXq" secondAttribute="trailing" id="Iz8-nf-5F3"/>
+                            <constraint firstAttribute="trailing" secondItem="hXr-K2-C3o" secondAttribute="trailing" id="Ma6-cB-4UU"/>
+                            <constraint firstItem="yz3-N7-BXq" firstAttribute="top" secondItem="OCB-74-fE8" secondAttribute="bottom" constant="268" id="RnC-UJ-XA2"/>
+                            <constraint firstItem="7nW-eO-X9Q" firstAttribute="centerY" secondItem="ZsI-iu-EWz" secondAttribute="centerY" id="Y2v-IM-OMG"/>
+                            <constraint firstItem="yz3-N7-BXq" firstAttribute="centerY" secondItem="hXr-K2-C3o" secondAttribute="centerY" id="Z6U-8l-rBA"/>
+                            <constraint firstItem="7nW-eO-X9Q" firstAttribute="top" secondItem="OCB-74-fE8" secondAttribute="bottom" constant="213" id="eaf-r5-r0H"/>
+                            <constraint firstItem="6Qk-x0-H2f" firstAttribute="top" secondItem="hXr-K2-C3o" secondAttribute="bottom" id="g75-f5-1T4"/>
+                            <constraint firstItem="7nW-eO-X9Q" firstAttribute="leading" secondItem="ZsI-iu-EWz" secondAttribute="leadingMargin" id="tCs-zp-drb"/>
+                            <constraint firstItem="hXr-K2-C3o" firstAttribute="leading" secondItem="ZsI-iu-EWz" secondAttribute="leading" id="u2A-BY-3de"/>
+                            <constraint firstItem="hXr-K2-C3o" firstAttribute="top" secondItem="OCB-74-fE8" secondAttribute="bottom" id="w1u-Wm-ycs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView1" destination="7nW-eO-X9Q" id="6vm-pe-shi"/>
+                        <outlet property="stackView2" destination="yz3-N7-BXq" id="Nab-g4-8GF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2f-t8-RmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Pab-Tt-PIG"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="161"/>
+        </scene>
+        <!--Scores-->
+        <scene sceneID="e6R-Rm-ynr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Scores" id="EaY-Ia-2KZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPF-bD-sHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="97"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="ubX-WF-u2d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Oik-r5-mZN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbX-XF-2Ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="211"/>
+        </scene>
+        <!--Multiplayer-->
+        <scene sceneID="qjH-Ov-bJ6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Multiplayer" id="HUl-Ba-C72" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7q-8q-NyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966" y="373"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="313" height="414"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BkU-bN-cFH"/>
+    </inferredMetricsTieBreakers>
+</document>
